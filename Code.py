@@ -7,14 +7,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
 # 1. Download historical stock data for Apple (AAPL) using yfinance
-ticker = '^BSESN'  # Change this to any stock ticker you'd like (e.g., TSLA for Tesla) VOD
-data = yf.download(ticker, start='2020-10-01', end='2025-3-29')
+ticker = '^BSESN'  # Change this to any stock ticker you'd like (e.g., TSLA for Tesla)
+data = yf.download(ticker, start='2020-10-01', end='2025-3-29') # Change the Date
 
 # Check if data is fetched correctly
 if data.empty:
     print("No data fetched from Yahoo Finance. Check ticker or internet connection.")
 
-# 2. Preprocessing data: Create a DataFrame with 'Close' price and a corresponding time index
+
 data = data[['Close']].dropna()
 data['Days'] = np.arange(len(data))  # Create a 'Days' feature for regression
 
