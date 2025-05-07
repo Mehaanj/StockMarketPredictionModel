@@ -1,1 +1,1 @@
-# StockMarketPredictionModel
+# Stock Market Prediction Model
